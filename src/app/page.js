@@ -78,7 +78,7 @@ export default function Home() {
             }}
           >
             <img
-              src="profile.jpg"
+              src="profile.webp"
               style={{
                 objectFit: "cover",
                 width: "50px",
@@ -263,6 +263,7 @@ export default function Home() {
                     <div className={styles.skill}>MongoDB</div>
                     <div className={styles.skill}>Python</div>
                     <div className={styles.skill}>Django</div>
+                    <div className={styles.skill}>NodeJS</div>
                     <div className={styles.skill}>Git</div>
                   </div>
                 </div>
@@ -294,6 +295,7 @@ export default function Home() {
                     <div className={styles.skill}>Blender</div>
                     <div className={styles.skill}>Cloudflare</div>
                     <div className={styles.skill}>AWS</div>
+                    <div className={styles.skill}>Vercel</div>
                   </div>
                 </div>
               </div>
