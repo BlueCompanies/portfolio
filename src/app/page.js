@@ -5,12 +5,16 @@ import styles from "./page.module.css";
 import { useEffect, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { FaEnvelope } from "react-icons/fa";
+import Link from "next/link";
+import { FaArrowRight } from "react-icons/fa";
+import Header from "./_components/Header";
 
 export default function Home() {
   const form = useRef();
   const aboutMe = useRef(null);
   const myProjects = useRef(null);
   const contactMe = useRef(null);
+  const home = useRef(null);
   const [isMessageSent, setIsMessageSent] = useState(false);
 
   const sendEmail = (e) => {
@@ -33,18 +37,6 @@ export default function Home() {
       );
   };
 
-  const handleScrollContactMe = () => {
-    aboutMe.current?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const handleScrollMyProjects = () => {
-    myProjects.current?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const handleScrollContact = () => {
-    contactMe.current?.scrollIntoView({ behavior: "smooth" });
-  };
-
   useEffect(() => {
     if (isMessageSent) {
       setTimeout(() => {
@@ -55,68 +47,12 @@ export default function Home() {
 
   return (
     <main style={{ position: "relative" }}>
-      <div
-        style={{
-          position: "fixed",
-          top: 0,
-          width: "100%",
-          background: "#fff",
-          height: "60px",
-          display: "flex",
-          justifyContent: "space-between", // Align items to the edges
-          alignItems: "center", // Vertically center items
-          boxShadow: "1px 1px solid #000",
-        }}
-      >
-        <div style={{ display: "flex", alignItems: "center" }}>
-          <div
-            style={{
-              width: "50px",
-              height: "50px",
-              marginLeft: "20px",
-              borderRadius: "50%",
-            }}
-          >
-            <img
-              src="profile.webp"
-              style={{
-                objectFit: "cover",
-                width: "50px",
-                height: "50px",
-                borderRadius: "50%",
-              }}
-            ></img>
-          </div>
-          <p
-            style={{
-              marginLeft: "10px",
-              color: "#303030",
-              fontSize: "16px",
-              fontWeight: 700,
-            }}
-          >
-            ANDRÉS FELIPE BETANCUR
-          </p>
-        </div>
-
-        <div
-          style={{
-            width: "40%",
-            height: "40px",
-            fontSize: "16px",
-            display: "flex",
-            justifyContent: "space-around",
-            alignItems: "center",
-            color: "#303030",
-            fontWeight: 700,
-            cursor: "pointer",
-          }}
-        >
-          <p onClick={() => handleScrollContactMe()}>ACERCA DE MI</p>
-          <p onClick={() => handleScrollMyProjects()}>PROYECTOS</p>
-          <p onClick={() => handleScrollContact()}>CONTACTO</p>
-        </div>
-      </div>
+      <Header
+        home={home}
+        aboutMe={aboutMe}
+        myProjects={myProjects}
+        contactMe={contactMe}
+      />
       <div
         style={{
           background: "#EEEEEE",
@@ -127,6 +63,7 @@ export default function Home() {
           alignItems: "center",
           flexDirection: "column",
         }}
+        ref={home}
       >
         <p style={{ color: "#303030", fontSize: 80, fontWeight: 700 }}>
           HOLA, SOY ANDRÉS
@@ -137,6 +74,7 @@ export default function Home() {
             experiencias digitales innovadoras y funcionales
           </p>
         </div>
+
         <button
           style={{
             border: "none",
@@ -178,6 +116,7 @@ export default function Home() {
             <p style={{ fontSize: "40px", color: "#303030", fontWeight: 700 }}>
               ACERCA DE MÍ
             </p>
+
             <div
               style={{
                 width: "50px",
@@ -265,6 +204,11 @@ export default function Home() {
                     <div className={styles.skill}>Django</div>
                     <div className={styles.skill}>NodeJS</div>
                     <div className={styles.skill}>Git</div>
+                    <div className={styles.skill}>TypeScript</div>
+                    <div className={styles.skill}>Cloudflare</div>
+                    <div className={styles.skill}>AWS</div>
+                    <div className={styles.skill}>Vercel</div>
+                    <div className={styles.skill}>DNS</div>
                   </div>
                 </div>
 
@@ -293,9 +237,7 @@ export default function Home() {
                     <div className={styles.skill}>Photoshop</div>
                     <div className={styles.skill}>Adobe Illustrator</div>
                     <div className={styles.skill}>Blender</div>
-                    <div className={styles.skill}>Cloudflare</div>
-                    <div className={styles.skill}>AWS</div>
-                    <div className={styles.skill}>Vercel</div>
+                    <div className={styles.skill}>Excel</div>
                   </div>
                 </div>
               </div>
@@ -387,6 +329,22 @@ export default function Home() {
                   cargan rápidamente. La aplicación es bastante nueva y aún le
                   estoy agregando nuevas funcionalides.
                 </p>
+                <Link
+                  href="/details/fazesound"
+                  style={{
+                    background: "#7843E9",
+                    marginTop: "10px",
+                    padding: "10px",
+                    color: "#fff",
+                    borderRadius: "4px",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <span style={{ marginRight: "10px" }}>Detalles</span>
+                  <FaArrowRight />
+                </Link>
               </div>
             </div>
           </div>
@@ -436,6 +394,22 @@ export default function Home() {
                   permite que el usuario pueda previsualizar cómo se verían sus
                   diseños en el producto que desea comprar en tiempo real.
                 </p>
+                <Link
+                  href="/details/impretion"
+                  style={{
+                    background: "#7843E9",
+                    marginTop: "10px",
+                    padding: "10px",
+                    color: "#fff",
+                    borderRadius: "4px",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <span style={{ marginRight: "10px" }}>Detalles</span>
+                  <FaArrowRight />
+                </Link>
               </div>
             </div>
           </div>
@@ -491,6 +465,22 @@ export default function Home() {
                   planeado retomar este proyecto y mejorarlo aún más con los
                   conocimientos que tengo ahora en el presente.
                 </p>
+                <Link
+                  href="/details/nuzke"
+                  style={{
+                    background: "#7843E9",
+                    marginTop: "10px",
+                    padding: "10px",
+                    color: "#fff",
+                    borderRadius: "4px",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <span style={{ marginRight: "10px" }}>Detalles</span>
+                  <FaArrowRight />
+                </Link>
               </div>
             </div>
           </div>
