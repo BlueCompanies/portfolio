@@ -197,6 +197,7 @@ export default function Home() {
                     <div className={styles.skill}>HTML</div>
                     <div className={styles.skill}>CSS</div>
                     <div className={styles.skill}>JavaScript</div>
+                    <div className={styles.skill}>Java</div>
                     <div className={styles.skill}>React</div>
                     <div className={styles.skill}>Nextjs</div>
                     <div className={styles.skill}>MongoDB</div>
@@ -208,7 +209,6 @@ export default function Home() {
                     <div className={styles.skill}>Cloudflare</div>
                     <div className={styles.skill}>AWS</div>
                     <div className={styles.skill}>Vercel</div>
-                    <div className={styles.skill}>DNS</div>
                   </div>
                 </div>
 
@@ -331,6 +331,73 @@ export default function Home() {
                 </p>
                 <Link
                   href="/details/fazesound"
+                  style={{
+                    background: "#7843E9",
+                    marginTop: "10px",
+                    padding: "10px",
+                    color: "#fff",
+                    borderRadius: "4px",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <span style={{ marginRight: "10px" }}>Detalles</span>
+                  <FaArrowRight />
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style={{
+              marginTop: "70px",
+              width: "100%",
+              display: "flex",
+              flexDirection: "column",
+              color: "#303030",
+              alignItems: "center",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                width: "70%",
+              }}
+            >
+              <img src="./project4.webp"></img>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  width: "50%",
+                }}
+              >
+                <a
+                  href="https://impretion-shops.pages.dev/general?shopRef=tYmOsGUXaN5bjktXXDX2IR"
+                  target="_blank"
+                >
+                  <h2>impretion-shops.pages.dev (actualmente sin dominio)</h2>
+                </a>
+
+                <p
+                  style={{
+                    wordWrap: "break-word",
+                  }}
+                >
+                  Impretion-shops es una extensión de Impretion que permite la
+                  personalización de productos fácilmente. Utiliza el mismo
+                  sistema de Impretion, empleando Puppeteer para la ejecución
+                  del HTML en un servidor VPS. Dado que está pensada como una
+                  aplicación web móvil, la carga constante de archivos de
+                  Photoshop podría perjudicar la velocidad de la misma. Por eso,
+                  la carga de archivos de Photopea se ejecuta en un servidor
+                  privado virtual. En mi caso estoy usando Hostinger.
+                </p>
+                <Link
+                  href="/details/impretion-shops"
                   style={{
                     background: "#7843E9",
                     marginTop: "10px",
